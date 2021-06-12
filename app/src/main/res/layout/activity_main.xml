@@ -72,89 +72,30 @@
         android:id="@+id/reminderDetails"
         android:layout_width="244dp"
         android:layout_height="44dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Event Details"
         android:inputType="textMultiLine"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/reminderTitle"
-        app:layout_constraintHorizontal_bias="0.314"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/reminderTitle"
-        app:layout_constraintTop_toBottomOf="@+id/reminderTitle" />
-
-    <EditText
-        android:id="@+id/reminderDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="Event Date"
-        android:inputType="date"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/reminderDetails"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/reminderDetails"
-        app:layout_constraintTop_toBottomOf="@+id/reminderDetails" />
-
-    <EditText
-        android:id="@+id/reminderTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Event Time"
-        android:inputType="time"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/reminderDate"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/reminderDate"
-        app:layout_constraintTop_toBottomOf="@+id/reminderDate" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="Date :"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Time :"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/reminderTitle"
+        tools:ignore="RtlCompat" />
 
     <Button
         android:id="@+id/reminderAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:onClick="reminderAdd"
         android:text="ADD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reminderCancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reminderTime"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/reminderTime" />
 
     <Button
         android:id="@+id/reminderCancel"
@@ -167,4 +108,56 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/reminderAdd"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageDate"
+        android:layout_width="51dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="84dp"
+        android:onClick="dateClick"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@android:drawable/ic_menu_agenda" />
+
+    <ImageView
+        android:id="@+id/imageTime"
+        android:layout_width="49dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
+        android:onClick="timeClick"
+        app:layout_constraintEnd_toEndOf="@+id/imageDate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageDate"
+        app:layout_constraintTop_toBottomOf="@+id/imageDate"
+        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+
+    <TextView
+        android:id="@+id/reminderDate"
+        android:layout_width="242dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="56dp"
+        android:hint="Date"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/reminderDetails"
+        app:layout_constraintStart_toStartOf="@+id/reminderDetails"
+        app:layout_constraintTop_toBottomOf="@+id/reminderDetails" />
+
+    <TextView
+        android:id="@+id/reminderTime"
+        android:layout_width="235dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="52dp"
+        android:hint="Time"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/reminderDate"
+        app:layout_constraintStart_toStartOf="@+id/reminderDate"
+        app:layout_constraintTop_toBottomOf="@+id/reminderDate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
