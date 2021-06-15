@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_color"
     tools:context=".MainActivity">
 
     <TextView
@@ -43,7 +44,7 @@
         android:layout_width="245dp"
         android:layout_height="46dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Enter Event"
         android:inputType="textPersonName"
@@ -157,6 +158,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/reminderDate"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/reminderDate"
         app:layout_constraintTop_toBottomOf="@+id/reminderDate" />
 

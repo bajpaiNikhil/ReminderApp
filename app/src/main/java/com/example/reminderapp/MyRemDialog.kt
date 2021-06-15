@@ -12,6 +12,7 @@ import java.util.*
 
 class MyRemDialog : androidx.fragment.app.DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+
         lateinit var myDlg : Dialog
 
         val parent = activity
@@ -48,7 +49,19 @@ class MyRemDialog : androidx.fragment.app.DialogFragment() {
 
                 builder.setPositiveButton("YEs" , DialogInterface.OnClickListener { dialog, which ->
 
-                    val i = Intent(parent!!,ReminderList::class.java)
+                    (parent as MainActivity).sendNotification()
+
+                    val event = parent.titleReminder.text.toString()
+                    val time  = parent.timeTImeView.text.toString()
+                    val date  = parent.dateTextView.text.toString()
+
+                    val eventCreate = Events(event , time , date)
+                    eventList.add(eventCreate)
+
+                    val i = Intent(parent!!,CustomReminderList::class.java)
+//                    i.putExtra(ReminderList.Event, event)
+//                    i.putExtra(ReminderList.Time,time)
+//                    i.putExtra(ReminderList.Date,date)
                     startActivity(i)
                 })
 

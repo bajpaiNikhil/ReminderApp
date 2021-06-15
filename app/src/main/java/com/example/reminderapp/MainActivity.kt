@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener,Ti
 
     lateinit var dateTextView : TextView
     lateinit var timeTImeView : TextView
+    lateinit var titleReminder : TextView
 
 
 
@@ -27,15 +28,24 @@ class MainActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener,Ti
         setContentView(R.layout.activity_main)
 
         val addButton = findViewById<Button>(R.id.reminderAdd)
+
         dateTextView  = findViewById(R.id.reminderDate)
         timeTImeView  = findViewById(R.id.reminderTime)
+        titleReminder = findViewById(R.id.reminderTitle)
+
 
         addButton.setOnClickListener {
             Log.d("Main Activity" ,"THis is the way for dialog box ")
 
             dialogBox()
+//
+//            val event = titleReminder.text.toString()
+//
+//            val i = Intent(this,ReminderList::class.java)
+//            i.putExtra(ReminderList.Event, event)
+//            startActivity(i)
 
-            sendNotification()
+            //sendNotification()
 //            val i = Intent(this , ReminderList::class.java)
 //            startActivity(i)
         }
@@ -63,7 +73,7 @@ class MainActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener,Ti
         finish()
     }
 
-    private fun sendNotification() {
+     fun sendNotification() {
 
     //1 . Get reference of notification manager
         val nManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
@@ -140,8 +150,6 @@ class MainActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener,Ti
         timeTImeView.text = time
 
     }
-
-
 
 
 }
