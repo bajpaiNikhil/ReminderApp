@@ -68,7 +68,6 @@ class MainActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener,Ti
 
     }
 
-
     fun reminderExit(view: View) {
         finish()
     }
@@ -153,22 +152,3 @@ class MainActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener,Ti
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

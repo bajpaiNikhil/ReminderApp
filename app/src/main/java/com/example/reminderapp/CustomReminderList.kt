@@ -16,8 +16,10 @@ class CustomReminderList : AppCompatActivity() {
 
     lateinit var evtAdapter : EventAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_custom_reminder_list)
 
         evtAdapter = EventAdapter(this,R.layout.custom_event_view, eventList)
@@ -25,7 +27,7 @@ class CustomReminderList : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?) : Boolean {
         val item1 = menu?.add(0,1,0,"Add More")
         item1?.setIcon(R.drawable.ic_launcher_foreground)
         item1?.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
@@ -41,7 +43,6 @@ class CustomReminderList : AppCompatActivity() {
             1 ->{
                 val i = Intent(this,MainActivity::class.java)
                 startActivity(i)
-
             }
         }
         return super.onOptionsItemSelected(item)
@@ -70,10 +71,11 @@ class EventAdapter(context: Context, layoutId : Int, data : List<Events>):
         dateTextview.text = "${evnt?.date}"
         timeTextView.text = "${evnt?.time}"
 
-
         return view
 
     }
+
+
     }
 
 

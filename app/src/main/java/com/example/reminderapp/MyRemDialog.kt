@@ -7,7 +7,9 @@ import android.app.TimePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.DialogFragment
+import android.provider.CalendarContract
+import android.util.Log
+import android.widget.Toast
 import java.util.*
 
 class MyRemDialog : androidx.fragment.app.DialogFragment() {
@@ -49,7 +51,7 @@ class MyRemDialog : androidx.fragment.app.DialogFragment() {
 
                 builder.setPositiveButton("YEs" , DialogInterface.OnClickListener { dialog, which ->
 
-                    (parent as MainActivity).sendNotification()
+                    (parent as MainActivity).sendNotification() //called custom Notification funtion
 
                     val event = parent.titleReminder.text.toString()
                     val time  = parent.timeTImeView.text.toString()
@@ -58,10 +60,16 @@ class MyRemDialog : androidx.fragment.app.DialogFragment() {
                     val eventCreate = Events(event , time , date)
                     eventList.add(eventCreate)
 
+//                    val intent = Intent(Intent.ACTION_INSERT).apply {
+//
+//                        data = CalendarContract.Events.CONTENT_URI
+//                        //Toast.makeText(this, "Reached till here" , Toast.LENGTH_SHORT)
+//                        putExtra(CalendarContract.Events.TITLE, event)
+//
+//                    }
+//                        startActivity(intent)
+
                     val i = Intent(parent!!,CustomReminderList::class.java)
-//                    i.putExtra(ReminderList.Event, event)
-//                    i.putExtra(ReminderList.Time,time)
-//                    i.putExtra(ReminderList.Date,date)
                     startActivity(i)
                 })
 
